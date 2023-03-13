@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PayWithMyBankSDKDemoAndroid</string>
+    <string name="connect_my_bank">Connect my bank</string>
+    <string name="success">Success!</string>
+    <string name="canceled">Canceled =(</string>
+    <string name="back_to_home">Back to home</string>
+</resources>
