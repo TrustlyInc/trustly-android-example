@@ -34,7 +34,11 @@ class LightBoxActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
 
-        lightBoxWidget.proceedToChooseAccount()
+        /**
+         * patch to deal with  "Uncaught ReferenceError: Paywithmybank is not defined"  message in Android system log
+         */
+        //lightBoxWidget.proceedToChooseAccount()
+        lightBoxWidget.hybrid( "javascript:PayWithMyBank.proceedToChooseAccount()", "#return", "#cancel")
     }
 
     private fun redirectToScreen(callback: Callback) {
