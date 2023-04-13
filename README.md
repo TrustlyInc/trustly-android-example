@@ -2,7 +2,6 @@
 
 fork of TrustlyInc/trustly-android-example with local changes to get it working for our specific environment at Pala.
 
-
 The purpose of this example app is to demonstrate how to implement and use the [Trustly Android SDK](https://amer.developers.trustly.com/payments/docs/android-quickstart).
 
 
