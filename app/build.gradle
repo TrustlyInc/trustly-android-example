@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'net.trustly.paywithmybanksdkdemoandroid'
+    namespace 'net.trustly.trustlysdkdemoandroid'
     compileSdk 33
 
     defaultConfig {
-        applicationId "net.trustly.paywithmybanksdkdemoandroid"
+        applicationId "net.trustly.trustlysdkdemoandroid"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-    implementation files('libs/paywithmybank-android-sdk-2.2.1.aar')
+    implementation 'net.trustly:trustly-android-sdk:3.0.1'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'
