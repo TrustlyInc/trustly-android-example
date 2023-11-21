@@ -1,16 +1,16 @@
-package net.trustly.paywithmybanksdkdemoandroid.ui
+package net.trustly.trustlysdkdemoandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.paywithmybank.android.sdk.interfaces.PayWithMyBank
-import com.paywithmybank.android.sdk.interfaces.PayWithMyBankCallback
-import com.paywithmybank.android.sdk.views.PayWithMyBankView
-import net.trustly.paywithmybanksdkdemoandroid.R
+import net.trustly.android.sdk.interfaces.Trustly
+import net.trustly.android.sdk.interfaces.TrustlyCallback
+import net.trustly.android.sdk.views.TrustlyView
+import net.trustly.trustlysdkdemoandroid.R
 
 class LightBoxActivity : AppCompatActivity() {
 
-    private lateinit var lightBoxWidget: PayWithMyBankView
+    private lateinit var lightBoxWidget: TrustlyView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +21,11 @@ class LightBoxActivity : AppCompatActivity() {
         lightBoxWidget = findViewById(R.id.lightBoxWidget)
         lightBoxWidget.establish(establishDataValues)
             .onReturn(
-                (PayWithMyBankCallback { _: PayWithMyBank, _: Map<String, String> ->
+                (TrustlyCallback { _: Trustly, _: Map<String, String> ->
                     redirectToScreen(Callback.RETURN)
                 })
             ).onCancel(
-                (PayWithMyBankCallback { _: PayWithMyBank, _: Map<String, String> ->
+                (TrustlyCallback { _: Trustly, _: Map<String, String> ->
                     redirectToScreen(Callback.CANCEL)
                 })
             )

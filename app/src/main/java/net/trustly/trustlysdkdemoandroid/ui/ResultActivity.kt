@@ -1,10 +1,10 @@
-package net.trustly.paywithmybanksdkdemoandroid.ui
+package net.trustly.trustlysdkdemoandroid.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
-import net.trustly.paywithmybanksdkdemoandroid.R
+import net.trustly.trustlysdkdemoandroid.R
 
 class ResultActivity : AppCompatActivity() {
 

@@ -1,12 +1,13 @@
-package net.trustly.paywithmybanksdkdemoandroid.ui
+package net.trustly.trustlysdkdemoandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import com.paywithmybank.android.sdk.views.PayWithMyBankView
-import net.trustly.paywithmybanksdkdemoandroid.EstablishData
-import net.trustly.paywithmybanksdkdemoandroid.R
+import net.trustly.android.sdk.views.TrustlyView
+
+import net.trustly.trustlysdkdemoandroid.EstablishData
+import net.trustly.trustlysdkdemoandroid.R
 import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
@@ -16,8 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val establishDataValues = EstablishData.getEstablishDataValues().toMutableMap()
-        val payWithMyBankWidget = findViewById<PayWithMyBankView>(R.id.payWithMyBankWidget)
-        payWithMyBankWidget.selectBankWidget(establishDataValues).onBankSelected { _, data ->
+        val trustlyWidget = findViewById<TrustlyView>(R.id.trustlyWidget)
+        trustlyWidget.selectBankWidget(establishDataValues).onBankSelected { _, data ->
             establishDataValues[PAYMENT_PROVIDER_ID] = data[PAYMENT_PROVIDER_ID].toString()
         }
 

@@ -1,4 +1,4 @@
-package net.trustly.paywithmybanksdkdemoandroid.ui
+package net.trustly.trustlysdkdemoandroid.ui
 
 import android.content.Intent
 import android.os.Bundle

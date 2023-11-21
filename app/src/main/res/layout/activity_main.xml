@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <com.paywithmybank.android.sdk.views.PayWithMyBankView
-        android:id="@+id/payWithMyBankWidget"
+    <net.trustly.android.sdk.views.TrustlyView
+        android:id="@+id/trustlyWidget"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/btnConnectMyBank"
