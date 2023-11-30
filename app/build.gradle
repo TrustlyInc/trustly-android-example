@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'net.trustly.paywithmybanksdkdemoandroid'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "net.trustly.paywithmybanksdkdemoandroid"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -43,6 +43,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
 
     testImplementation 'junit:junit:4.13.2'
 
