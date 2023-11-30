@@ -1,4 +1,4 @@
-package net.trustly.paywithmybanksdkdemoandroid.data
+package net.trustly.trustlysdkdemoandroid.data
 
 import io.reactivex.Observable
 import okhttp3.ResponseBody
@@ -8,6 +8,6 @@ import retrofit2.http.POST
 interface DemoApi {
 
     @POST("/signature")
-    fun postSignature(@Body establishData: Map<String, String>): Observable<ResponseBody>
+    fun postRequestSignature(@Body establishData: Map<String, String>): Observable<ResponseBody>
 
 }

@@ -1,18 +1,18 @@
-package net.trustly.paywithmybanksdkdemoandroid.ui
+package net.trustly.trustlysdkdemoandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import com.paywithmybank.android.sdk.views.PayWithMyBankView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import net.trustly.paywithmybanksdkdemoandroid.EstablishData
-import net.trustly.paywithmybanksdkdemoandroid.R
-import net.trustly.paywithmybanksdkdemoandroid.data.RetrofitClient
+import net.trustly.android.sdk.views.TrustlyView
+import net.trustly.trustlysdkdemoandroid.EstablishData
+import net.trustly.trustlysdkdemoandroid.R
+import net.trustly.trustlysdkdemoandroid.data.RetrofitClient
 import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        postSignature(establishDataValues)
+        postRequestSignature()
 
         val connectWithMyBankButton = findViewById<AppCompatButton>(R.id.btnConnectMyBank)
         connectWithMyBankButton.setOnClickListener {
@@ -49,9 +49,9 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun postSignature(establishDataValues: MutableMap<String, String>) {
+    private fun postRequestSignature() {
         val retrofitClient = RetrofitClient.getClient()
-        addDisposable(retrofitClient.postSignature(establishDataValues)
+        addDisposable(retrofitClient.postRequestSignature(establishDataValues)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnTerminate {
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initWidget() {
-        val payWithMyBankWidget = findViewById<PayWithMyBankView>(R.id.payWithMyBankWidget)
+        val payWithMyBankWidget = findViewById<TrustlyView>(R.id.trustlyWidget)
         payWithMyBankWidget.selectBankWidget(establishDataValues).onBankSelected { _, data ->
             establishDataValues[PAYMENT_PROVIDER_ID] = data[PAYMENT_PROVIDER_ID].toString()
         }

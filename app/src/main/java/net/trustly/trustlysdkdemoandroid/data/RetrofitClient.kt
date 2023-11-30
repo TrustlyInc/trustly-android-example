@@ -1,4 +1,4 @@
-package net.trustly.paywithmybanksdkdemoandroid.data
+package net.trustly.trustlysdkdemoandroid.data
 
 import okhttp3.OkHttpClient
 import okhttp3.Request
