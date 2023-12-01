@@ -24,7 +24,7 @@ object RetrofitClient {
 
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
-                .baseUrl("https://shop-on-merchant.fly.dev/")
+                .baseUrl("http://localhost:8080/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
