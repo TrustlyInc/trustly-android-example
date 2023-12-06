@@ -2,7 +2,7 @@ package net.trustly.trustlysdkdemoandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -58,10 +58,11 @@ class MainActivity : AppCompatActivity() {
                 initWidget()
             }
             .subscribe({
-                Toast.makeText(this, it.string(), Toast.LENGTH_SHORT).show()
-                establishDataValues["requestSignature"] = it.string()
+                val requestSignature = it.string()
+                Log.i(TAG, "requestSignature: $requestSignature")
+                establishDataValues["requestSignature"] = requestSignature
             }, {
-                Toast.makeText(this, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
+                Log.e(TAG, it.message, it)
             })
         )
     }
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        private const val TAG = "MainActivity"
         private const val PAYMENT_PROVIDER_ID = "paymentProviderId"
     }
 
