@@ -6,12 +6,12 @@ object EstablishData {
 
     fun getEstablishDataValues(): Map<String, String> {
         val establishDataValues: MutableMap<String, String> = HashMap()
-        establishDataValues["accessId"] = "TSwGyK52Mnpt5b8C"
+        establishDataValues["accessId"] = "YOUR_ACCESS_ID"
 //        establishDataValues["requestSignature"] = "YOUR_REQUEST_SIGNATURE"
-        establishDataValues["merchantId"] = "1127"
+        establishDataValues["merchantId"] = "YOUR_MERCHANT_ID"
         establishDataValues["description"] = "Android SDK Demo transaction"
         establishDataValues["currency"] = "USD"
-        establishDataValues["merchantReference"] = "g:cac73df7-52b4-47d7-89d3-9628d4cfb65e"
+        establishDataValues["merchantReference"] = "some_unique_transaction_identifier"
         establishDataValues["paymentType"] = "Retrieval"
         establishDataValues["metadata.urlScheme"] = "sdkdemo://"
         establishDataValues["env"] = "sandbox"
