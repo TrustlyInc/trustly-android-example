@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitClient {
 
     private var retrofit: Retrofit? = null
+    private const val BASE_URL = "http://localhost:8080/api/"
 
     fun getClient(): DemoApi {
         val client = OkHttpClient.Builder()
@@ -24,7 +25,7 @@ object RetrofitClient {
 
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
-                .baseUrl("http://localhost:8080/api/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)

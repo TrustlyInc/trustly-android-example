@@ -17,7 +17,7 @@ Follow the steps below to run this example app with your own Trustly API credent
 1. Open Android Studio
 2. File -> Open -> "trustly-android-example"
 3. Wait for project to finish building
-4. Open the [Establish Data](./app/src/main/java/net/trustly/paywithmybanksdkdemoandroid/EstablishData.kt) file and insert your credentials into the placeholders:
+4. Open the [Establish Data](./app/src/main/java/net/trustly/trustlysdkdemoandroid/EstablishData.kt) file and insert your credentials into the placeholders:
 
 ```
 object EstablishData {
@@ -39,6 +39,17 @@ object EstablishData {
 }
 ```
 5. Setup a target device or emulator and "Run" the application
+
+### Request Signature
+
+In order to generate dynamically the `requestSignature` attribute into your `EstablishData` object, follow the steps below:
+
+1. Clone and run the [trustly-nestjs-example](https://github.com/TrustlyInc/trustly-nestjs-example), in case you don't have a request signature server set
+2. Add or change the request signature endpoint (e.g. `http://localhost:8080/api/`) into `BASE_URL` variable of the `RetrofitClient.kt` file
+3. Change to `true` the `DYNAMIC_REQUEST_SIGNATURE` variable in the `EstablishData.kt` file
+4. Run your app
+
+Documentation: [Securing Requests](https://amer.developers.trustly.com/payments/docs/securing-requests)
 
 ## License
 

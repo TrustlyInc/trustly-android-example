@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        postRequestSignature()
+        if (EstablishData.DYNAMIC_REQUEST_SIGNATURE) postRequestSignature()
+        else initWidget()
 
         val connectWithMyBankButton = findViewById<AppCompatButton>(R.id.btnConnectMyBank)
         connectWithMyBankButton.setOnClickListener {
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             }
             .subscribe({
                 val requestSignature = it.string()
-                Log.i(TAG, "requestSignature: $requestSignature")
+                Log.i(TAG, "Dynamic requestSignature: $requestSignature")
                 establishDataValues["requestSignature"] = requestSignature
             }, {
                 Log.e(TAG, it.message, it)
