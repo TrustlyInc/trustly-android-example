@@ -36,13 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         if (EstablishData.DYNAMIC_REQUEST_SIGNATURE) postRequestSignature()
         else initWidget()
-
-        val connectWithMyBankButton = findViewById<AppCompatButton>(R.id.btnConnectMyBank)
-        connectWithMyBankButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, LightBoxActivity::class.java)
-            intent.putExtra(LightBoxActivity.ESTABLISH_DATA, establishDataValues as Serializable)
-            startActivity(intent)
-        }
     }
 
     override fun onDestroy() {
@@ -72,7 +65,14 @@ class MainActivity : AppCompatActivity() {
         val payWithMyBankWidget = findViewById<TrustlyView>(R.id.trustlyWidget)
         payWithMyBankWidget.selectBankWidget(establishDataValues).onBankSelected { _, data ->
             establishDataValues[PAYMENT_PROVIDER_ID] = data[PAYMENT_PROVIDER_ID].toString()
+            openLightbox()
         }
+    }
+
+    private fun openLightbox() {
+        val intent = Intent(this@MainActivity, LightBoxActivity::class.java)
+        intent.putExtra(LightBoxActivity.ESTABLISH_DATA, establishDataValues as Serializable)
+        startActivity(intent)
     }
 
     companion object {
