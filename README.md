@@ -2,7 +2,6 @@
 
 The purpose of this example app is to demonstrate how to implement and use the [Trustly Android SDK](https://amer.developers.trustly.com/payments/docs/android-quickstart).
 
-
 ## Getting Started
 
 Follow the steps below to run this example app with your own Trustly API credentials.
@@ -38,8 +37,26 @@ object EstablishData {
 
 }
 ```
+
 5. Setup a target device or emulator and "Run" the application
+
+### Request Signature
+
+In order to generate dynamically the `requestSignature` attribute into your `EstablishData` object, follow the steps below:
+
+1. Clone and run the [trustly-nestjs-example](https://github.com/TrustlyInc/trustly-nestjs-example), in case you don't have a request signature server set
+2. Add or change the request signature endpoint (e.g. `http://localhost:8080/api/`) into `BASE_URL` variable of the `RetrofitClient.kt` file
+3. Change to `true` the `DYNAMIC_REQUEST_SIGNATURE` variable in the `EstablishData.kt` file
+4. Run your app
+
+Documentation: [Securing Requests](https://amer.developers.trustly.com/payments/docs/securing-requests)
 
 ## License
 
 [MIT License](https://github.com/TrustlyInc/trustly-android-example/blob/DEV/LICENSE)
+
+# Contributing
+
+You can participate in this project by submitting bugs and feature requests in the [Issues](https://github.com/TrustlyInc/trustly-android-example/issues) tab. Please, add [@lukevance](https://github.com/lukevance) as an assignee.
+
+If you are interested in fixing issues and contributing directly to the code base, feel free to open a Pull Request with your changes. Please, make sure to fulfill our [Pull Request Template](https://github.com/TrustlyInc/trustly-android-example/blob/main/.github/pull_request_template.md) and add [@lukevance](https://github.com/lukevance) as code reviewer.

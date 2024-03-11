@@ -2,6 +2,8 @@ package net.trustly.trustlysdkdemoandroid
 
 object EstablishData {
 
+    const val DYNAMIC_REQUEST_SIGNATURE = false
+
     fun getEstablishDataValues(): Map<String, String> {
         val establishDataValues: MutableMap<String, String> = HashMap()
         establishDataValues["accessId"] = "YOUR_ACCESS_ID"
