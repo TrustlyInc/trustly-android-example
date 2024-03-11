@@ -17,7 +17,7 @@ Follow the steps below to run this example app with your own Trustly API credent
 1. Open Android Studio
 2. File -> Open -> "trustly-android-example"
 3. Wait for project to finish building
-4. Open the [Establish Data](./app/src/main/java/net/trustly/paywithmybanksdkdemoandroid/EstablishData.kt) file and insert your credentials into the placeholders:
+4. Open the [Establish Data](./app/src/main/java/net/trustly/trustlysdkdemoandroid/EstablishData.kt) file and insert your credentials into the placeholders:
 
 ```
 object EstablishData {
