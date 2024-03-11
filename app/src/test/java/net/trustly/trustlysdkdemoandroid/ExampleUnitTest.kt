@@ -1,4 +1,4 @@
-package net.trustly.paywithmybanksdkdemoandroid
+package net.trustly.trustlysdkdemoandroid
 
 import org.junit.Test
 
