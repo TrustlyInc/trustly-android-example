@@ -31,14 +31,6 @@
         <activity
             android:name=".ui.RedirectActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="sdkdemo" />
-            </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -52,7 +44,7 @@
         </activity>
         <activity
             android:name=".ui.ResultActivity"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>
