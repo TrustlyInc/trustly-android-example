@@ -16,6 +16,8 @@ object EstablishData {
         establishDataValues["customer.name"] = "John"
         establishDataValues["customer.address.country"] = "US"
         establishDataValues["metadata.urlScheme"] = "sdkdemo://"
+        establishDataValues["metadata.deeplinkStrategy"] = "deeplink-url"
+        establishDataValues["metadata.deeplinkUrl"] = "intent://sdk.demo.trustly.one/start/oauth/app/#Intent;scheme=https;end"
         establishDataValues["env"] = "sandbox"
         return establishDataValues
     }

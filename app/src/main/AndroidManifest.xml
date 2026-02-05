@@ -25,9 +25,23 @@
         </activity>
         <activity
             android:name=".ui.LightBoxActivity"
+            android:launchMode="singleTask"
             android:configChanges="screenSize|orientation"
-            android:exported="false"
-            android:launchMode="singleTask" />
+            android:exported="true" />
+        <activity
+            android:name=".ui.RedirectActivity"
+            android:exported="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
+                <data android:host="sdk.demo.trustly.one" />
+                <data android:path="/start/oauth/app/" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.ResultActivity"
             android:exported="false" />
