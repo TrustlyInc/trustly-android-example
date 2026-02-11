@@ -1,6 +1,8 @@
 package net.trustly.trustlysdkdemoandroid.ui
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
 class RedirectActivity : AppCompatActivity() {
@@ -10,7 +12,9 @@ class RedirectActivity : AppCompatActivity() {
 
         //TODO This validation is related with DeepLink strategy and will be included into SDK
         if (intent.data!!.scheme!!.contains("http")) {
-            finish()
+            Handler(Looper.getMainLooper()).postDelayed({
+                finish()
+            }, 700)
         }
     }
 
