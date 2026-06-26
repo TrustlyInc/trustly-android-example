@@ -29,7 +29,7 @@
             android:configChanges="screenSize|orientation"
             android:exported="true" />
         <activity
-            android:name=".ui.RedirectActivity"
+            android:name="net.trustly.android.sdk.views.TrustlyRedirectActivity"
             android:exported="true">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
