@@ -25,9 +25,9 @@
         </activity>
         <activity
             android:name=".ui.LightBoxActivity"
-            android:launchMode="singleTask"
             android:configChanges="screenSize|orientation"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTask" />
         <activity
             android:name="net.trustly.android.sdk.views.TrustlyRedirectActivity"
             android:exported="true">
@@ -37,9 +37,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="https" />
-                <data android:host="sdk.demo.trustly.one" />
-                <data android:path="/start/oauth/app/" />
+                <data
+                    android:host="sdk.demo.trustly.one"
+                    android:path="/start/oauth/app/"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
