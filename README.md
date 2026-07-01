@@ -1,6 +1,6 @@
 # Trustly Android Example App
 
-The purpose of this example app is to demonstrate how to implement and use the [Trustly Android SDK](https://amer.developers.trustly.com/payments/docs/android-quickstart).
+The purpose of this example app is to demonstrate how to implement and use the [Trustly Android SDK](https://amer.developers.trustly.com/sdks/android).
 
 ## Getting Started
 
